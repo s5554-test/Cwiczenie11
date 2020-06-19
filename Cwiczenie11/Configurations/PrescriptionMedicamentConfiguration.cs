@@ -13,10 +13,8 @@ namespace Cwiczenie11.Configurations
         public void Configure(EntityTypeBuilder<PrescriptionMedicament> builder)
         {
             builder
-                .HasKey(e => e.IdMedicament);
+                .HasKey(e => new { e.IdMedicament, e.IdPrescription });
 
-            builder
-                .HasKey(e => e.IdPrescription);
         }
     }
 }
